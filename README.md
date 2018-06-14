@@ -1,4 +1,4 @@
-# vue-org-tree
+# ex-org-tree
 
 > A simple organization tree chart based on Vue2.x
 
@@ -10,24 +10,30 @@
 	prop           | descripton                   | type                   | default
 	---------------|------------------------------|:----------------------:|---------------------
 	data           |                              | `Object`               | 
-	props          |  configure props             | `Object`               | `{label: 'label', children: 'children', expand: 'expand'}`
-	labelWidth     |  node label width            | `String` \| `Number`.  | `auto` 
-	collapsable    | children node is collapsable | `Boolean`              | `true`
-	renderContent  | how to render node label     | `Function`             |     -
+	props          | configure props              | `Object`               | `{label: 'label', children: 'children', expand: 'expand'}`
+	labelWidth     | node label width             | `String` \| `Number`.  | `auto` 
+	collapsible    | children node is collapsible | `Boolean`              | `true`
 	labelClassName | node label class             | `Function` \| `String` |     -
 
 
   * ### events
 
-    - on-expand
+    - expand-click(status='expanded|collapsed', data)
        
       well be called when the collapse-btn clicked
        
 
-    - on-node-click
+    - node-click(data)
   
       well be called when the node-label clicked
 
+  * ### slot
+  
+  ```html
+    <template slot-scope="scope">
+      {{scope.data.label}}
+    </template>
+  ```
 
 
 ## Example
